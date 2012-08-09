@@ -1,0 +1,43 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+name                pristine-tar
+version             1.26.1
+categories          archivers
+platforms           darwin
+license             GPL-2+
+maintainers         gmx.de:Torsten.Maehne openmaintainer
+
+description         Regenerate a pristine upstream tarball from a \
+                    binary delta file and a revision control checkout
+
+long_description \
+    pristine-tar can regenerate a pristine upstream tarball using only a \
+    small binary delta file and a revision control checkout of the \
+    upstream branch. The package also includes a pristine-gz command, \
+    which can regenerate a pristine .gz file, a pristine-bz2 for \
+    .bz2 files, and a pristine-xz for .xz files. The delta file is \
+    designed to be checked into revision control along-side the upstream \
+    branch, thus allowing Debian packages to be built entirely using \
+    sources in revision control, without the need to keep copies of \
+    upstream tarballs.
+
+homepage            http://joeyh.name/code/pristine-tar/
+
+# fetch.type          git
+# git.url             https://github.com/maehne/pristine-tar.git
+# git.branch          59f5591dc14c43aec63671cfa5a6f094306311cd 
+github.setup          maehne pristine-tar 59f5591dc14c43aec63671cfa5a6f094306311cd
+
+checksums           rmd160  ba5b51e5965cc9c33d949a7be5118bac57f9c832
+
+depends_lib         path:bin/perl:perl5
+
+depends_run         port:gnutar port:xdelta1 port:gzip port:bzip2 \
+                    port:pbzip2 port:xz
+
+configure.cmd       perl Makefile.PL INSTALLDIRS=perl TAR_PROGRAM=gnutar
+

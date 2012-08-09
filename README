@@ -1,0 +1,15 @@
+                        Experimental MacPorts
+
+                                README
+
+                Torsten Maehne <Torsten.Maehne@gmx.de>
+
+
+This repository contains experimental port recipes for MacPorts
+<http://www.macports.org/>. These recipes either fix bugs in ports
+already present in MacPorts and reported to its bug tracker
+<http://trac.macports.org/> or they provide new ports, which have not
+yet been accepted into the MacPorts repository. That means that
+recipes will disappear from this repository once they have been
+migrated or have been superseded by the ports available via
+"port selfupdate" from the MacPorts repository.

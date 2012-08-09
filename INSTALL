@@ -1,0 +1,20 @@
+                        Experimental MacPorts
+
+                               INSTALL
+
+                Torsten Maehne <Torsten.Maehne@gmx.de>
+
+To use the MacPorts recipes in this repository, please add the path to
+its ports/ subdirectory to the sources.conf of your MacPorts
+installation, which is by default located at:
+
+/opt/local/etc/macports/sources.conf
+
+The new path should be inserted before the existing rsync line to
+download the ports release tarball, e.g.:
+
+# Start of file /opt/local/etc/macports/sources.conf
+# ...
+file://<path-to>/experimental-macports/ports
+rsync://rsync.macports.org/release/tarballs/ports.tar [default]
+# End of file /opt/local/etc/macports/sources.conf
