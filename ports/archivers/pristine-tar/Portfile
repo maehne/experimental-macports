@@ -29,12 +29,12 @@ homepage            http://joeyh.name/code/pristine-tar/
 
 # fetch.type          git
 # git.url             https://github.com/maehne/pristine-tar.git
-# git.branch          5a7ace2 
-github.setup          maehne pristine-tar 5a7ace2
+# git.branch          5c8649f
+github.setup          maehne pristine-tar 5c8649f
 
-checksums           md5     a77f549c6efd70277d2f354a863f41ad \
-                    sha1    049ceb705a712b14257fd3e242e630133b241304 \
-                    rmd160  8785a855688ec0ff82ca3a0a5d1bed3dae3a44d5
+checksums           md5     629cbc5fb1593eece53f95396189d141 \
+                    sha1    bf57f16d240efd818665e8e436356999ca0c17a2 \
+                    rmd160  46371848da9877360a384111b2e2d83003d4bf17
 
 depends_lib         path:bin/perl:perl5
 
