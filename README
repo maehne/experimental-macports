@@ -13,3 +13,41 @@ yet been accepted into the MacPorts repository. That means that
 recipes will disappear from this repository once they have been
 migrated or have been superseded by the ports available via
 "port selfupdate" from the MacPorts repository.
+
+
+Currently, this repository contains the following new ports:
+
+pristine-tar @59f5591dc14c43aec63671cfa5a6f094306311cd (archivers)
+    Regenerate a pristine upstream tarball from a binary delta file and
+    a revision control checkout
+
+    UNRELEASED
+
+xdelta1 @1.1.4 (archivers)
+    Xdelta -- A binary delta generator (old stable maintenance release)
+
+    See ticket #35395: Xdelta -- A binary delta generator (old stable
+        maintenance release)
+
+gaw @20111016 (cad)
+    Gaw - Gtk Analog Wave viewer.
+
+    See ticket #35386: Gaw: Gtk Analog Wave viewer
+
+Currently, this repository contains the following new ports:
+
+cmake @2.8.8 (devel)
+    Cross-platform make
+
+    Enhancement: +gui variant installs now CMake.app bundle ()
+
+    See ticket #30539: cmake @2.8.5 +gui add application bundle for
+        cmake-gui to the Applications/MacPorts folder
+
+ipe-tools @20110916 (graphics)
+    Tools for the Ipe extensible drawing editor
+
+    Fix: build failure
+
+    See ticket #35385: ipe-tools @20110916 build failure of pdftoipe due
+        to API change in poppler >= 0.20
