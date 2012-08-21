@@ -29,15 +29,19 @@ homepage            http://joeyh.name/code/pristine-tar/
 
 # fetch.type          git
 # git.url             https://github.com/maehne/pristine-tar.git
-# git.branch          59f5591dc14c43aec63671cfa5a6f094306311cd 
-github.setup          maehne pristine-tar 59f5591dc14c43aec63671cfa5a6f094306311cd
+# git.branch          5a7ace2 
+github.setup          maehne pristine-tar 5a7ace2
 
-checksums           rmd160  ba5b51e5965cc9c33d949a7be5118bac57f9c832
+checksums           md5     a77f549c6efd70277d2f354a863f41ad \
+                    sha1    049ceb705a712b14257fd3e242e630133b241304 \
+                    rmd160  8785a855688ec0ff82ca3a0a5d1bed3dae3a44d5
 
 depends_lib         path:bin/perl:perl5
 
 depends_run         port:gnutar port:xdelta1 port:gzip port:bzip2 \
                     port:pbzip2 port:xz
 
-configure.cmd       perl Makefile.PL INSTALLDIRS=perl TAR_PROGRAM=gnutar
+configure.cmd       perl Makefile.PL
+configure.pre_args  PREFIX=${prefix}
+configure.args      INSTALLDIRS=perl TAR_PROGRAM=gnutar
 
