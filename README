@@ -17,7 +17,7 @@ migrated or have been superseded by the ports available via
 
 Currently, this repository contains the following new ports:
 
-pristine-tar @59f5591dc14c43aec63671cfa5a6f094306311cd (archivers)
+pristine-tar @b74af91 (archivers)
     Regenerate a pristine upstream tarball from a binary delta file and
     a revision control checkout
 
