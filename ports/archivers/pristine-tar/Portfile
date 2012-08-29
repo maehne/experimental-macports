@@ -6,7 +6,7 @@ PortGroup           github 1.0
 
 name                pristine-tar
 version             1.27
-revision            0
+revision            1
 categories          archivers
 platforms           darwin
 license             GPL-2+
@@ -29,13 +29,13 @@ long_description \
 homepage            http://joeyh.name/code/pristine-tar/
 
 # fetch.type          git
-# git.url             https://github.com/maehne/pristine-tar.git
-# git.branch          b3bcf61
-github.setup          maehne pristine-tar b3bcf61
+# git.url             https://github.com/joeyh/pristine-tar.git
+# git.branch          b74af91
+github.setup          joeyh pristine-tar b74af91
 
-checksums           md5     77c48a5246cab925bb0e248edcf4fa1d \
-                    sha1    cd8c2f4004452018a4d620a1b414d122ce5e7826 \
-                    rmd160  06af671f0f3a9ca47359042a4a5bed0dbd3f1b64
+checksums           md5     f596b70434c27e961fe190bdc9acc4d3 \
+                    sha1    b9f8d3c963a7944155ec1cce4e9c50cc13aa1d21 \
+                    rmd160  22c63ddb61f05b3e7e50602c0f5b507f704e4085
 
 depends_lib         path:bin/perl:perl5
 
