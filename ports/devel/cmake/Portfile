@@ -84,7 +84,7 @@ post-destroot {
 
 variant gui description {Qt4 based cmake-gui} {
 	PortGroup qt4 1.0
-#	patchfiles-append patch-CMakeLists.txt.diff
+	patchfiles-append patch-CMakeLists.txt.diff
 	configure.args-append --qt-gui --qt-qmake=${qt_qmake_cmd}
 }
 
