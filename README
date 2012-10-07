@@ -29,25 +29,12 @@ xdelta1 @1.1.4 (archivers)
     See ticket #35395: Xdelta -- A binary delta generator (old stable
         maintenance release)
 
-gaw @20111016 (cad)
-    Gaw - Gtk Analog Wave viewer.
-
-    See ticket #35386: Gaw: Gtk Analog Wave viewer
-
 Currently, this repository contains the following new ports:
 
-cmake @2.8.8 (devel)
+cmake @2.8.9 (devel)
     Cross-platform make
 
     Enhancement: +gui variant installs now CMake.app bundle ()
 
     See ticket #30539: cmake @2.8.5 +gui add application bundle for
         cmake-gui to the Applications/MacPorts folder
-
-ipe-tools @20110916 (graphics)
-    Tools for the Ipe extensible drawing editor
-
-    Fix: build failure
-
-    See ticket #35385: ipe-tools @20110916 build failure of pdftoipe due
-        to API change in poppler >= 0.20
