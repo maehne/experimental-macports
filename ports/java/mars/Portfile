@@ -26,29 +26,30 @@ master_sites        http://courses.missouristate.edu/kenvollmar/mars/MARS_${file
 distname            Mars${fileversion}
 use_zip             yes
 extract.suffix      .jar
-
-#worksrcdir          ${distname}
+extract.mkdir       yes
 
 checksums           sha1    5a8608ba0a8548d12c035d9817769d86edfa77f8 \
                     rmd160  21e419cd2cd181e48e651e6beeae88cd4273466f
 
 depends_lib         bin:java:kaffe
 
-# extract {
-#     cp ${distpath}/${distfile} ${worksrcpath}/${distfile}
-#     unzip ${worksrcpath}/${distfile} MarsThumbnail.gif
-# }
+patchfiles          patch-mars-venus-editors-jeditsyntax-DefaultInputHandler.java
 
 post-patch          {}
 
 use_configure       no
 
-build               {}
+build {
+    # Recompile patched source file mars/venus/editors/jeditsyntax/DefaultInputHandler.java
+    system "cd ${worksrcpath} && javac ${worksrcpath}/mars/venus/editors/jeditsyntax/DefaultInputHandler.java"
+    # Create new JAR archive
+    system "cd ${worksrcpath} && sh ${worksrcpath}/CreateMarsJar.bat"
+}
 
 destroot {
     # Install Mars JAR
     xinstall -m 755 -d ${destroot}${prefix}/share/java
-    xinstall -m 644 -W ${distpath} ${distname}.jar ${destroot}${prefix}/share/java
+    xinstall -m 644 ${worksrcpath}/Mars.jar ${destroot}${prefix}/share/java/${distname}.jar
     # Install and configure mars command line wrapper
     xinstall -m 755 ${filespath}/mars.in ${destroot}${prefix}/bin/mars
     reinplace "s|@MARSJARPATH@|${prefix}/share/java/${distname}.jar|g" ${destroot}${prefix}/bin/mars
@@ -58,9 +59,9 @@ platform darwin {
     depends_build-append port:makeicns
     # Build a nice .app
     post-destroot {
-	set MarsAppPath ${destroot}${applications_dir}/MARS.app
-	# Build paths
-	xinstall -m 755 -d ${MarsAppPath}/Contents/Resources/Java \
+	    set MarsAppPath ${destroot}${applications_dir}/MARS.app
+	    # Build paths
+	    xinstall -m 755 -d ${MarsAppPath}/Contents/Resources/Java \
                            ${MarsAppPath}/Contents/MacOS
         # Basic package information
         xinstall -m 644 ${filespath}/PkgInfo ${MarsAppPath}/Contents/PkgInfo
@@ -70,13 +71,12 @@ platform darwin {
         # Set the JAR file name
         reinplace "s|@MARSJARFILE@|${distname}.jar|g" ${MarsAppPath}/Contents/Info.plist
         # Generate the icon
-        system "${prefix}/bin/makeicns -in ${workpath}/images/MarsThumbnail.gif -out ${MarsAppPath}/Contents/Resources/Mars.icns"
-	# Link to the JAR file
-#        xinstall -m 644 -W ${distpath} ${distname}.jar ${MarsAppPath}/Contents/Resources/Java/
+        system "${prefix}/bin/makeicns -in ${worksrcpath}/images/MarsThumbnail.gif -out ${MarsAppPath}/Contents/Resources/Mars.icns"
+        # Link to the JAR file
         ln -s ${prefix}/share/java/${distname}.jar \
 			${MarsAppPath}/Contents/Resources/Java/${distname}.jar
         # Copy the stub app
-	xinstall -m 755 "/System/Library/Frameworks/JavaVM.framework/Versions/A/Resources/MacOS/JavaApplicationStub" \
+        xinstall -m 755 "/System/Library/Frameworks/JavaVM.framework/Versions/A/Resources/MacOS/JavaApplicationStub" \
 			${MarsAppPath}/Contents/MacOS
     }
 }
