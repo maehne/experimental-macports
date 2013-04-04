@@ -28,13 +28,6 @@ pristine-tar @b74af91 (archivers)
 
     UNRELEASED
 
-xdelta1 @1.1.4 (archivers)
-    Xdelta -- A binary delta generator (old stable maintenance release)
-
-    See ticket #35395: Xdelta -- A binary delta generator (old stable
-        maintenance release)
-
-
 Currently, this repository contains the following updated ports:
 
 cvs2svn @2.4.0_1
@@ -48,3 +41,8 @@ gtkwave @3.3.44 (cad)
     A viewer for common electronic CAD waveform files.
 
     See ticket #38318: Please update gtkwave to version 3.3.44
+
+xdelta1 @1.1.4_1 (archivers)
+    Xdelta -- A binary delta generator (old stable maintenance release)
+
+    See ticket #38678: xdelta1 @ 1.1.4 Fix aclocal warning caused by underquoted definition in xdelta.m4
