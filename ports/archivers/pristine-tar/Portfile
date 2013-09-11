@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 
 name                pristine-tar
-version             1.27
+version             1.29
 revision            1
 categories          archivers
 platforms           darwin
@@ -15,27 +15,30 @@ maintainers         gmx.de:Torsten.Maehne openmaintainer
 description         Regenerate a pristine upstream tarball from a \
                     binary delta file and a revision control checkout
 
-long_description \
-    pristine-tar can regenerate a pristine upstream tarball using only a \
-    small binary delta file and a revision control checkout of the \
-    upstream branch. The package also includes a pristine-gz command, \
-    which can regenerate a pristine .gz file, a pristine-bz2 for \
-    .bz2 files, and a pristine-xz for .xz files. The delta file is \
-    designed to be checked into revision control along-side the upstream \
-    branch, thus allowing Debian packages to be built entirely using \
-    sources in revision control, without the need to keep copies of \
-    upstream tarballs.
+long_description    pristine-tar can regenerate a pristine upstream \
+                    tarball using only a small binary delta file and a \
+                    revision control checkout of the upstream branch. \
+                    The package also includes a pristine-gz command, \
+                    which can regenerate a pristine .gz file, a \
+                    pristine-bz2 for .bz2 files, and a pristine-xz for \
+                    .xz files. The delta file is designed to be \
+                    checked into revision control along-side the \
+                    upstream branch, thus allowing Debian packages to \
+                    be built entirely using sources in revision \
+                    control, without the need to keep copies of \
+                    upstream tarballs.
 
 homepage            http://joeyh.name/code/pristine-tar/
 
 # fetch.type          git
 # git.url             https://github.com/joeyh/pristine-tar.git
 # git.branch          b74af91
-github.setup          joeyh pristine-tar b74af91
+#github.setup          joeyh pristine-tar 7b92a1a
+github.setup          maehne pristine-tar b89a403
 
-checksums           md5     f596b70434c27e961fe190bdc9acc4d3 \
-                    sha1    b9f8d3c963a7944155ec1cce4e9c50cc13aa1d21 \
-                    rmd160  22c63ddb61f05b3e7e50602c0f5b507f704e4085
+checksums           md5     3d0bb031a47f644ad9a581fcbd93458a \
+                    sha1    f51d40ef9231d77ce1bd4d6fe9b9634e5af8dc75 \
+                    rmd160  c4f30461399530f4fe68d854dfced6ab7ef8063a
 
 depends_lib         path:bin/perl:perl5
 
