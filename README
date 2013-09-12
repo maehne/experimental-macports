@@ -17,6 +17,14 @@ migrated or have been superseded by the ports available via
 
 Currently, this repository contains the following new ports:
 
+gaw3 @20130801 (cad)
+    Gaw is a software tool for displaying analog waveforms from
+    sampled data, e.g., from the output of simulators like Spice. Data
+    can be imported to gaw using files or direct TCP/IP connections. Gaw
+    is based on the Gtk3+ toolkit.
+
+    UNRELEASED
+
 pristine-tar @b89a403 (archivers)
     Regenerate a pristine upstream tarball from a binary delta file and
     a revision control checkout
@@ -31,6 +39,14 @@ cvs2svn @2.4.0_1
 
     Applied patch from ticket #33190 "cvs2svn depends on python26",
     which adds variants for the different Python versions.
+
+gaw @20130801 (cad)
+    Gaw is a software tool for displaying analog waveforms from
+    sampled data, e.g., from the output of simulators like Spice. Data
+    can be imported to gaw using files or direct TCP/IP connections. Gaw
+    is based on the Gtk2+ toolkit.
+
+    See ticket #40461: gaw @20111016: Please update gaw to 20130801
 
 gtkwave @3.3.48 (cad)
     A viewer for common electronic CAD waveform files.

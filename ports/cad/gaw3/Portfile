@@ -1,0 +1,38 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id: Portfile 98145 2012-09-26 10:21:02Z jmr@macports.org $
+
+PortSystem 1.0
+
+name                gaw3
+version             20130801
+categories          cad
+platforms           darwin
+license             GPL-2
+maintainers         gmx.de:Torsten.Maehne
+description         Gtk Analog Wave viewer
+long_description    Gaw is a software tool for displaying analog waveforms \
+                    from sampled data, e.g., from the output of simulators \
+                    like Spice. Data can be imported to gaw using files or \
+                    direct TCP/IP connections. Gaw is based on the \
+                    Gtk3+ toolkit.
+
+conflicts           gaw
+
+homepage            http://www.rvq.fr/linux/gaw.php
+master_sites        http://download.tuxfamily.org/gaw/download/
+
+checksums           md5     9890c2c05d760dcde636f897eaf5ffbb \
+                    sha1    ee0f72073dcda37f7baf2283491c0fe9b2ea1a7a \
+                    rmd160  039f99f28437dfaa77b2501dc38dbb001d892eac
+depends_build       port:pkgconfig
+depends_lib         port:gtk3 \
+                    port:hicolor-icon-theme
+depends_run         port:openbrowser
+
+patchfiles         patch-src-userprefs.h.diff
+
+configure.args      --enable-gawsound=no
+
+livecheck.type      regex
+livecheck.url       ${master_sites}
+livecheck.regex     ${name}-(\[0-9\]+)${extract.suffix}
