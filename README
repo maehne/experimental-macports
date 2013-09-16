@@ -40,20 +40,7 @@ cvs2svn @2.4.0_1
     Applied patch from ticket #33190 "cvs2svn depends on python26",
     which adds variants for the different Python versions.
 
-gaw @20130801 (cad)
-    Gaw is a software tool for displaying analog waveforms from
-    sampled data, e.g., from the output of simulators like Spice. Data
-    can be imported to gaw using files or direct TCP/IP connections. Gaw
-    is based on the Gtk2+ toolkit.
-
-    See ticket #40461: gaw @20111016: Please update gaw to 20130801
-
 gtkwave @3.3.48 (cad)
     A viewer for common electronic CAD waveform files.
 
     See ticket #40453: Please update gtkwave to version 3.3.48
-
-mars @4.4 (java, devel)
-    MIPS Assembler and Runtime Simulator
-
-    See ticket #40444: mars @4.3: Please update to version 4.4
