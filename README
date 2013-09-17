@@ -33,14 +33,5 @@ pristine-tar @b89a403 (archivers)
 
 Currently, this repository contains the following updated ports:
 
-cvs2svn @2.4.0_1
-    cvs2svn is a Python script that converts a CVS repository to a
-    Subversion repository.
+NONE
 
-    Applied patch from ticket #33190 "cvs2svn depends on python26",
-    which adds variants for the different Python versions.
-
-gtkwave @3.3.48 (cad)
-    A viewer for common electronic CAD waveform files.
-
-    See ticket #40453: Please update gtkwave to version 3.3.48
