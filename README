@@ -33,5 +33,19 @@ pristine-tar @b89a403 (archivers)
 
 Currently, this repository contains the following updated ports:
 
-NONE
+pdftk @2.0.2 (textproc)
+    pdftk is a simple tool for doing everyday things with PDF
+    documents: Merge PDF Documents Split PDF Pages into a New
+    Document Decrypt Input as Necessary (Password Required)
+    Encrypt Output as Desired Fill PDF Forms with FDF Data
+    and/or Flatten Forms Apply a Background Watermark Report
+    on PDF Metrics such as Metadata, Bookmarks, and Page
+    Labels Update PDF Metadata Attach Files to PDF Pages or
+    the PDF Document Unpack PDF Attachments Burst a PDF
+    Document into Single Pages Uncompress and Re-Compress Page
+    Streams Repair Corrupted PDF (Where Possible)
 
+    Note: The gcc48 variant is experimental and doesn't succeed to
+          compile due to ticket #22066. The gcc47 variant works.
+
+    See tickets #37580, #40058, and #22066.
