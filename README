@@ -33,6 +33,15 @@ pristine-tar @b89a403 (archivers)
 
 Currently, this repository contains the following updated ports:
 
+cmake @2.8.12 (devel)
+    An extensible, open-source system that manages the build
+    process in an operating system and compiler independent
+    manner. Unlike many cross-platform systems, CMake is
+    designed to be used in conjunction with the native build
+    environment.
+
+    See ticket #40746.
+
 pdftk @2.0.2 (textproc)
     pdftk is a simple tool for doing everyday things with PDF
     documents: Merge PDF Documents Split PDF Pages into a New
