@@ -42,6 +42,15 @@ cmake @2.8.12 (devel)
 
     See ticket #40746.
 
+gaw @20130801 (cad)
+    Gaw is a software tool for displaying analog waveforms
+    from sampled data, e.g., from the output of simulators
+    like Spice. Data can be imported to gaw using files or
+    direct TCP/IP connections. Gaw is based on the
+    Gtk2+ toolkit.
+
+    See ticket #40942.
+
 pdftk @2.0.2 (textproc)
     pdftk is a simple tool for doing everyday things with PDF
     documents: Merge PDF Documents Split PDF Pages into a New
