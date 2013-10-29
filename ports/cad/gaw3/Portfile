@@ -2,37 +2,41 @@
 # $Id: Portfile 98145 2012-09-26 10:21:02Z jmr@macports.org $
 
 PortSystem 1.0
+PortGroup               active_variants 1.1
 
-name                gaw3
-version             20130801
-categories          cad
-platforms           darwin
-license             GPL-2
-maintainers         gmx.de:Torsten.Maehne
-description         Gtk Analog Wave viewer
-long_description    Gaw is a software tool for displaying analog waveforms \
-                    from sampled data, e.g., from the output of simulators \
-                    like Spice. Data can be imported to gaw using files or \
-                    direct TCP/IP connections. Gaw is based on the \
-                    Gtk3+ toolkit.
+name                    gaw3
+version                 20130801
+categories              cad
+platforms               darwin
+license                 GPL-2
+maintainers             gmx.de:Torsten.Maehne
+description             Gtk Analog Wave viewer
+long_description        Gaw is a software tool for displaying analog waveforms \
+                        from sampled data, e.g., from the output of simulators \
+                        like Spice. Data can be imported to gaw using files or \
+                        direct TCP/IP connections. Gaw is based on the \
+                        Gtk3+ toolkit.
 
-conflicts           gaw
+conflicts               gaw
 
-homepage            http://www.rvq.fr/linux/gaw.php
-master_sites        http://download.tuxfamily.org/gaw/download/
+homepage                http://www.rvq.fr/linux/gaw.php
+master_sites            http://download.tuxfamily.org/gaw/download/
 
-checksums           md5     9890c2c05d760dcde636f897eaf5ffbb \
-                    sha1    ee0f72073dcda37f7baf2283491c0fe9b2ea1a7a \
-                    rmd160  039f99f28437dfaa77b2501dc38dbb001d892eac
-depends_build       port:pkgconfig
-depends_lib         port:gtk3 \
-                    port:hicolor-icon-theme
-depends_run         port:openbrowser
+checksums               md5     9890c2c05d760dcde636f897eaf5ffbb \
+                        sha1    ee0f72073dcda37f7baf2283491c0fe9b2ea1a7a \
+                        rmd160  039f99f28437dfaa77b2501dc38dbb001d892eac
 
-patchfiles         patch-src-userprefs.h.diff
+depends_build           port:pkgconfig
+depends_lib             port:gtk3 \
+                        port:hicolor-icon-theme
+depends_run             port:openbrowser
 
-configure.args      --enable-gawsound=no
+require_active_variants gtk2 x11
 
-livecheck.type      regex
-livecheck.url       ${master_sites}
-livecheck.regex     ${name}-(\[0-9\]+)${extract.suffix}
+patchfiles              patch-src-userprefs.h.diff
+
+configure.args          --enable-gawsound=no
+
+livecheck.type          regex
+livecheck.url           ${master_sites}
+livecheck.regex         ${name}-(\[0-9\]+)${extract.suffix}
