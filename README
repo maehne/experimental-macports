@@ -33,24 +33,6 @@ pristine-tar @b89a403 (archivers)
 
 Currently, this repository contains the following updated ports:
 
-cmake @2.8.12 (devel)
-    An extensible, open-source system that manages the build
-    process in an operating system and compiler independent
-    manner. Unlike many cross-platform systems, CMake is
-    designed to be used in conjunction with the native build
-    environment.
-
-    See ticket #40648.
-
-gaw @20130801 (cad)
-    Gaw is a software tool for displaying analog waveforms
-    from sampled data, e.g., from the output of simulators
-    like Spice. Data can be imported to gaw using files or
-    direct TCP/IP connections. Gaw is based on the
-    Gtk2+ toolkit.
-
-    See ticket #40942.
-
 pdftk @2.0.2 (textproc)
     pdftk is a simple tool for doing everyday things with PDF
     documents: Merge PDF Documents Split PDF Pages into a New
