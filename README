@@ -40,7 +40,7 @@ cmake @2.8.12 (devel)
     designed to be used in conjunction with the native build
     environment.
 
-    See ticket #40746.
+    See ticket #40648.
 
 gaw @20130801 (cad)
     Gaw is a software tool for displaying analog waveforms
