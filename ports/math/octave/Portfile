@@ -9,6 +9,7 @@ PortGroup           compilers 1.0
 name                octave
 
 version             3.8.1
+revision            1
 #conflicts           octave-devel
 categories          math science
 maintainers         michaelld openmaintainer
@@ -198,6 +199,11 @@ if {[variant_isset gui]} {
 
     depends_lib-append port:qt4-mac
     configure.args-append --enable-gui
+    # Patch to make cursor keys work in the GUI command line window
+    # (ticket #44334, upstream bug <https://savannah.gnu.org/bugs/?41337>).
+    # This causes problems with non-US keyboards that require the alt key
+    # to access parentheses[] and {} and backslash \ characters.
+    patchfiles-append patch-libgui-qterminal-libqterminal-unix-KeyboardTranslator.cpp.diff
 
 } else {
 
