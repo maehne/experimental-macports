@@ -33,16 +33,6 @@ pristine-tar @b89a403 (archivers)
 
 Currently, this repository contains the following updated ports:
 
-octave @3.8.1 (math)
-    Octave provides a convenient command line interface for
-    solving linear and nonlinear problems numerically, using a
-    language that is mostly compatible with Matlab. It is easily
-    extensible and customizable via user-defined functions or
-    using dynamically loaded modules written in e.g. C++, C or
-    Fortran.
-
-    This update of the octave port tries to fix ticket #44334.
-
 pdftk @2.0.2 (textproc)
     pdftk is a simple tool for doing everyday things with PDF
     documents: Merge PDF Documents Split PDF Pages into a New
