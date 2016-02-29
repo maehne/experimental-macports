@@ -1,0 +1,96 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id: Portfile 111147 2013-09-16 01:26:49Z ryandesign@macports.org $
+
+PortSystem          1.0
+
+name                logisim-evolution
+version             2.13.18
+revision            0
+categories          java cad science
+platforms           darwin
+supported_archs     noarch
+license             GPL-2+
+maintainers         gmx.de:Torsten.Maehne openmaintainer
+
+description         An educational tool for designing and simulating digital logic circuits
+
+long_description    Logisim-evolution is an educational tool for designing and \
+                    simulating digital logic circuits. Logisim was created and \
+                    actively developed by Dr. Carl Burch until 2011. The fork \
+                    Logisim-evolution is actively developed by members of the \
+                    universities of applied sciences BFH and HES-SO in Switzerland \
+                    and has been considerably extended over the original Logisim, \
+                    e.g., with support for tracing a chronogram, the possibility to \
+                    test the schematics directly on an electronic board, \
+                    TCL/TK consoles, etc.
+
+homepage            https://github.com/reds-heig/logisim-evolution
+master_sites        ${homepage}/releases/download/v${version}
+distname            logisim-evolution
+use_zip             yes
+extract.suffix      .jar
+
+checksums           sha1    88e5778b82a5d9686b4fd35575e29ecbf8321419 \
+                    rmd160  e15c4595708a1caffdc74a5b87d5e154aa9ca118
+
+depends_lib         bin:java:kaffe
+
+use_configure       no
+
+build               {}
+
+# The only reason we extract the zip file is to get the image for the
+# OS X app icon, so we don't need to extract it on other platforms.
+if {${os.platform} ne "darwin"} {
+    extract.only
+    destroot {
+        # Install the Logisim-evolution JAR
+        xinstall -m 755 -d ${destroot}${prefix}/share/java
+        xinstall -m 644 -W ${distpath} ${distname}.jar ${destroot}${prefix}/share/java
+
+        # Install and configure logisim-evolution command line wrapper
+        xinstall -m 755 ${filespath}/logisim-evolution.in ${destroot}${prefix}/bin/logisim-evolution
+        reinplace "s|@LOGISIMJARPATH@|${prefix}/share/java/${distname}.jar|g" ${destroot}${prefix}/bin/logisim-evolution
+    }
+}
+
+platform darwin {
+    depends_build-append        port:makeicns
+
+    extract.mkdir               yes
+    pre-extract {
+        extract.post_args-append    resources/logisim/img/logisim-icon-128.png
+    }
+
+    destroot {
+        # Install the Logisim-evolution JAR
+        xinstall -m 755 -d ${destroot}${prefix}/share/java
+        xinstall -m 644 -W ${distpath} ${distname}.jar ${destroot}${prefix}/share/java
+
+        # Install and configure logisim-evolution command line wrapper
+        xinstall -m 755 ${filespath}/logisim-evolution.in ${destroot}${prefix}/bin/logisim-evolution
+        reinplace "s|@LOGISIMJARPATH@|${prefix}/share/java/${distname}.jar|g" ${destroot}${prefix}/bin/logisim-evolution
+    }
+
+    # Build a nice .app
+    post-destroot {
+        set LogisimAppPath ${destroot}${applications_dir}/Logisim-evolution.app
+        # Build paths
+        xinstall -m 755 -d ${LogisimAppPath}/Contents/Resources/Java \
+                           ${LogisimAppPath}/Contents/MacOS
+        # Basic package information
+        xinstall -m 644 ${filespath}/PkgInfo ${LogisimAppPath}/Contents/PkgInfo
+        xinstall -m 644 ${filespath}/Info.plist.in ${LogisimAppPath}/Contents/Info.plist
+        # Set the version in the Info.plist
+        reinplace "s|@VERSION@|${version}|g" ${LogisimAppPath}/Contents/Info.plist
+        # Set the JAR file name
+        reinplace "s|@LOGISIMJARFILE@|${distname}.jar|g" ${LogisimAppPath}/Contents/Info.plist
+        # Generate the icon
+        system "${prefix}/bin/makeicns -in ${worksrcpath}/resources/logisim/img/logisim-icon-128.png -out ${LogisimAppPath}/Contents/Resources/Logisim-evolution.icns"
+        # Link to the JAR file
+        ln -s ${prefix}/share/java/${distname}.jar \
+                        ${LogisimAppPath}/Contents/Resources/Java/${distname}.jar
+        # Copy the stub app
+        xinstall -m 755 ${filespath}/universalJavaApplicationStub ${LogisimAppPath}/Contents/MacOS
+    }
+}

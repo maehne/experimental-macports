@@ -25,6 +25,19 @@ gaw3 @20130801 (cad)
 
     UNRELEASED
 
+logisim-evolution @2.13.18 (java)
+    Logisim-evolution is an educational tool for designing and
+    simulating digital logic circuits. Logisim was created and
+    actively developed by Dr. Carl Burch until 2011. The fork
+    Logisim-evolution is actively developed by members of the
+    universities of applied sciences BFH and HES-SO in Switzerland
+    and has been considerably extended over the original Logisim,
+    e.g., with support for tracing a chronogram, the possibility to
+    test the schematics directly on an electronic board,
+    TCL/TK consoles, etc.
+
+    UNRELEASED
+
 pristine-tar @b89a403 (archivers)
     Regenerate a pristine upstream tarball from a binary delta file and
     a revision control checkout
