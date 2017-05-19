@@ -25,11 +25,6 @@ gaw3 @20130801 (cad)
 
     UNRELEASED
 
-octave-symbolic @2.5.0_2 (math)
-    Symbolic toolbox based on SymPy.
-
-    See ticket #54195.
-
 pristine-tar @b89a403 (archivers)
     Regenerate a pristine upstream tarball from a binary delta file and
     a revision control checkout
