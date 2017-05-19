@@ -20,7 +20,7 @@ supported_archs     noarch
 variant python27 description "Use Python 2.7 SymPy" conflicts python34 python35 python36 {
     depends_lib-append  port:python27 \
                         port:py27-sympy
-    
+
     configure.env-append \
         PYTHON=${prefix}/bin/python2.7
 }
@@ -28,14 +28,14 @@ variant python27 description "Use Python 2.7 SymPy" conflicts python34 python35 
 variant python34 description "Use Python 3.4 SymPy" conflicts python27 python35 python36 {
     depends_lib-append  port:python34 \
                         port:py34-sympy
-    
+
     configure.env-append \
         PYTHON=${prefix}/bin/python3.4
 }
 
 variant python35 description "Use Python 3.5 SymPy" conflicts python27 python34 python36 {
     depends_lib-append  port:python35 \
-        port:py35-sympy
+                        port:py35-sympy
 
     configure.env-append \
         PYTHON=${prefix}/bin/python3.5
@@ -43,7 +43,7 @@ variant python35 description "Use Python 3.5 SymPy" conflicts python27 python34 
 
 variant python36 description "Use Python 3.6 SymPy" conflicts python27 python34 python35 {
     depends_lib-append  port:python35 \
-        port:py35-sympy
+                        port:py35-sympy
 
     configure.env-append \
         PYTHON=${prefix}/bin/python3.6
