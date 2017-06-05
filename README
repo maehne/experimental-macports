@@ -20,18 +20,9 @@ Currently, this repository contains the following new ports:
 gaw @20170326 (cad)
     Gaw is a software tool for displaying analog waveforms from
     sampled data, e.g., from the output of simulators like Spice. Data
-    can be imported to gaw using files or direct TCP/IP connections. Gaw
-    is based on the Gtk2+ toolkit.
+    can be imported to gaw using files or direct TCP/IP connections.
 
     See ticket #54222
-
-gaw3 @20170326 (cad)
-    Gaw is a software tool for displaying analog waveforms from
-    sampled data, e.g., from the output of simulators like Spice. Data
-    can be imported to gaw using files or direct TCP/IP connections. Gaw
-    is based on the Gtk3+ toolkit.
-
-    UNRELEASED
 
 pristine-tar @b89a403 (archivers)
     Regenerate a pristine upstream tarball from a binary delta file and
