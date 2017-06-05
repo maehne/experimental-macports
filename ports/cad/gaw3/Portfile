@@ -5,7 +5,7 @@ PortSystem 1.0
 PortGroup               active_variants 1.1
 
 name                    gaw3
-version                 20130801
+version                 20170326
 categories              cad
 platforms               darwin
 license                 GPL-2
@@ -22,16 +22,17 @@ conflicts               gaw
 homepage                http://www.rvq.fr/linux/gaw.php
 master_sites            http://download.tuxfamily.org/gaw/download/
 
-checksums               md5     9890c2c05d760dcde636f897eaf5ffbb \
-                        sha1    ee0f72073dcda37f7baf2283491c0fe9b2ea1a7a \
-                        rmd160  039f99f28437dfaa77b2501dc38dbb001d892eac
+checksums               md5     b4f14fed0be366cfb0b17c3542702eb7 \
+                        sha1    2d5d2de2942056c714b426f12c368ff15dff6e08 \
+                        rmd160  26ca62d0ca5a286aea054556bc4b3ae183c7fc7e \
+                        sha256  d27e82a2a62e5e40dcff0da51b7cf3105232ee7b9a9e852b99310e4f7a469b01
 
 depends_build           port:pkgconfig
 depends_lib             port:gtk3 \
                         port:hicolor-icon-theme
 depends_run             port:openbrowser
 
-require_active_variants gtk2 x11
+require_active_variants gtk3 x11
 
 patchfiles              patch-src-userprefs.h.diff
 
