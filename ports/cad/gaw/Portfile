@@ -4,7 +4,7 @@ PortSystem              1.0
 PortGroup               active_variants 1.1
 
 name                    gaw
-version                 20130801
+version                 20170326
 categories              cad
 platforms               darwin
 license                 GPL-2
@@ -20,9 +20,10 @@ homepage                http://www.rvq.fr/linux/gaw.php
 master_sites            http://download.tuxfamily.org/gaw/download/
 distname                ${name}2-${version}
 
-checksums               md5     2ea388d530176d30be52a1530237f21b \
-                        sha1    c3d54a320454f3fc5e8fc45db213eaeda3e4f2fd \
-                        rmd160  aa0e7c95afa1be77b6c84a97863e77f0d9e147cd
+checksums               md5     127846fe14a0ccc8cbba2e63547fcf98 \
+                        sha1    d122b22e6f9a709e0f511032402527e2424aac25 \
+                        rmd160  0be85d8e5e663788751863b169da2544285928f6 \
+                        sha256  32f9df431b44294dabedfbdb6b95dde191b6da3380682ca892763893da5afa15
 
 depends_build           port:pkgconfig
 depends_lib             port:gtk2 \
