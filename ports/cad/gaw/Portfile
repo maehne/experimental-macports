@@ -29,8 +29,6 @@ configure.args          --enable-gawsound=no
 livecheck.type          regex
 livecheck.url           ${master_sites}
 
-default_variants        +gtk3
-
 variant gtk2 conflicts gtk3 description {Use the GTK2+ toolkit for the GUI} {
     distname                ${name}2-${version}
 
@@ -59,4 +57,8 @@ variant gtk3 conflicts gtk2 description {Use the GTK3+ toolkit for the GUI} {
     require_active_variants gtk3 x11
 
     livecheck.regex         ${name}3-(\[0-9\]+)${extract.suffix}
+}
+
+if {![variant_isset gtk2] && ![variant_isset gtk3]} {
+    default_variants        +gtk3
 }
