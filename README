@@ -17,7 +17,7 @@ migrated or have been superseded by the ports available via
 
 Currently, this repository contains the following new ports:
 
-gaw @20130801 (cad)
+gaw @20170326 (cad)
     Gaw is a software tool for displaying analog waveforms from
     sampled data, e.g., from the output of simulators like Spice. Data
     can be imported to gaw using files or direct TCP/IP connections. Gaw
@@ -25,7 +25,7 @@ gaw @20130801 (cad)
 
     See ticket #54222
 
-gaw3 @20130801 (cad)
+gaw3 @20170326 (cad)
     Gaw is a software tool for displaying analog waveforms from
     sampled data, e.g., from the output of simulators like Spice. Data
     can be imported to gaw using files or direct TCP/IP connections. Gaw
