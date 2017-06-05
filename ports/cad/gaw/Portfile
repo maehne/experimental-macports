@@ -4,7 +4,7 @@ PortSystem              1.0
 PortGroup               active_variants 1.1
 
 name                    gaw
-version                 20170326
+version                 20170605
 categories              cad
 platforms               darwin
 license                 GPL-2
@@ -32,11 +32,10 @@ livecheck.url           ${master_sites}
 variant gtk2 conflicts gtk3 description {Use the GTK2+ toolkit for the GUI} {
     distname                ${name}2-${version}
 
-    checksums               md5     127846fe14a0ccc8cbba2e63547fcf98 \
-                            sha1    d122b22e6f9a709e0f511032402527e2424aac25 \
-                            rmd160  0be85d8e5e663788751863b169da2544285928f6 \
-                            sha256  32f9df431b44294dabedfbdb6b95dde191b6da3380682ca892763893da5afa15
-
+    checksums               md5     62f512dc42c789c115b2e51498307c1f \
+                            sha1    f8ee9b494a597ecfee646371064bd4b8256a66b8 \
+                            rmd160  b8ff66ff4033c7abad422f0ef14ebb2556475214 \
+                            sha256  a73658c52f097bdede96277694dae1c2b41fae82fe95ed9f11a9b8e635680ed8
     depends_lib-append      port:gtk2
 
     require_active_variants gtk2 x11
@@ -47,10 +46,10 @@ variant gtk2 conflicts gtk3 description {Use the GTK2+ toolkit for the GUI} {
 variant gtk3 conflicts gtk2 description {Use the GTK3+ toolkit for the GUI} {
     distname                ${name}3-${version}
 
-    checksums               md5     b4f14fed0be366cfb0b17c3542702eb7 \
-                            sha1    2d5d2de2942056c714b426f12c368ff15dff6e08 \
-                            rmd160  26ca62d0ca5a286aea054556bc4b3ae183c7fc7e \
-                            sha256  d27e82a2a62e5e40dcff0da51b7cf3105232ee7b9a9e852b99310e4f7a469b01
+    checksums               md5     ccffcd34d63a1f3716dd33eaa4950d77 \
+                            sha1    837e59cc363a845276618afd6040d9335804f21f \
+                            rmd160  cefeb10d12e4c7b4deb7d1ed84506ee628f75ea0 \
+                            sha256  8dfc1d741bdc50d43ba79f7080a807549730cb17b240eb5de5e2273b8063d658
 
     depends_lib-append      port:gtk3
 
