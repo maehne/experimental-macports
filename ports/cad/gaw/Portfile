@@ -13,24 +13,14 @@ description             Gtk Analog Wave viewer
 long_description        Gaw is a software tool for displaying analog waveforms \
                         from sampled data, e.g., from the output of simulators \
                         like Spice. Data can be imported to gaw using files or \
-                        direct TCP/IP connections. Gaw is based on the \
-                        Gtk2+ toolkit.
+                        direct TCP/IP connections.
 
 homepage                http://www.rvq.fr/linux/gaw.php
 master_sites            http://download.tuxfamily.org/gaw/download/
-distname                ${name}2-${version}
-
-checksums               md5     127846fe14a0ccc8cbba2e63547fcf98 \
-                        sha1    d122b22e6f9a709e0f511032402527e2424aac25 \
-                        rmd160  0be85d8e5e663788751863b169da2544285928f6 \
-                        sha256  32f9df431b44294dabedfbdb6b95dde191b6da3380682ca892763893da5afa15
 
 depends_build           port:pkgconfig
-depends_lib             port:gtk2 \
-                        port:hicolor-icon-theme
+depends_lib             port:hicolor-icon-theme
 depends_run             port:openbrowser
-
-require_active_variants gtk2 x11
 
 patchfiles              patch-src-userprefs.h.diff
 
@@ -38,4 +28,35 @@ configure.args          --enable-gawsound=no
 
 livecheck.type          regex
 livecheck.url           ${master_sites}
-livecheck.regex         ${name}2-(\[0-9\]+)${extract.suffix}
+
+default_variants        +gtk3
+
+variant gtk2 conflicts gtk3 description {Use the GTK2+ toolkit for the GUI} {
+    distname                ${name}2-${version}
+
+    checksums               md5     127846fe14a0ccc8cbba2e63547fcf98 \
+                            sha1    d122b22e6f9a709e0f511032402527e2424aac25 \
+                            rmd160  0be85d8e5e663788751863b169da2544285928f6 \
+                            sha256  32f9df431b44294dabedfbdb6b95dde191b6da3380682ca892763893da5afa15
+
+    depends_lib-append      port:gtk2
+
+    require_active_variants gtk2 x11
+
+    livecheck.regex     ${name}2-(\[0-9\]+)${extract.suffix}
+}
+
+variant gtk3 conflicts gtk2 description {Use the GTK3+ toolkit for the GUI} {
+    distname                ${name}3-${version}
+
+    checksums               md5     b4f14fed0be366cfb0b17c3542702eb7 \
+                            sha1    2d5d2de2942056c714b426f12c368ff15dff6e08 \
+                            rmd160  26ca62d0ca5a286aea054556bc4b3ae183c7fc7e \
+                            sha256  d27e82a2a62e5e40dcff0da51b7cf3105232ee7b9a9e852b99310e4f7a469b01
+
+    depends_lib-append      port:gtk3
+
+    require_active_variants gtk3 x11
+
+    livecheck.regex         ${name}3-(\[0-9\]+)${extract.suffix}
+}
