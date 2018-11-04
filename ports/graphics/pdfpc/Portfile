@@ -6,7 +6,7 @@ PortGroup               active_variants 1.1
 PortGroup               cmake 1.1
 
 github.setup            pdfpc pdfpc 4.2.1 v
-revision                1
+revision                2
 
 maintainers             {gmx.de:Torsten.Maehne @maehne} openmaintainer
 
@@ -36,7 +36,12 @@ depends_build-append    port:vala \
                         port:pkgconfig
 depends_lib-append      port:gtk3 \
                         port:poppler \
-                        port:libgee
+                        port:libgee \
+                        port:gstreamer1 \
+                        port:gstreamer1-gst-plugins-base \
+                        port:gstreamer1-gst-plugins-good
+
+require_active_variants port:gstreamer1-gst-plugins-good gtk3
 
 cmake.out_of_source     yes
 
@@ -48,15 +53,11 @@ pre-configure {
 
 variant quartz conflicts x11 {
     require_active_variants     port:gtk3 quartz
-    configure.args-append       -DMOVIES=off
+#    configure.args-append       -DMOVIES=off
 }
 
 variant x11 conflicts quartz {
     require_active_variants     port:gtk3 x11
-    depends_lib-append          port:gstreamer1 \
-                                port:gstreamer1-gst-plugins-base \
-                                port:gstreamer1-gst-plugins-good
-    require_active_variants     port:gstreamer1-gst-plugins-good gtk3
 }
 
 if {![variant_isset quartz]} {
